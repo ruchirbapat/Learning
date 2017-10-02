@@ -2,26 +2,6 @@
 #include <stdbool.h>
 #include <malloc.h>
 
-/* slow sorts O(n^2) */
-void bubble_sort(int* arr, int len) {
-	bool swapped = true;
-	while (swapped) {
-		swapped = false;
-		for (int i = 0; i < len - 1; i++) {
-			if (arr[i] > arr[i + 1]) {
-				int t = arr[i + 1];
-				arr[i + 1] = arr[i];
-				arr[i] = t;
-				swapped = true;
-			}
-		}
-	}
-}
-
-void selection_sort(int* arr, int len) {}	
-
-void insertion_sort(int* arr, int len) {}
-
 /* fast sorts O(n * log(n)) */
 void heap_sort(int* arr, int len) {}
 
@@ -47,7 +27,7 @@ void merge_sort(int* arr, int len) {
 	int a_len = half;
 	int b_len = len - half;
 	
-	/* copy the smaller first value from the two array's which are already sorted */
+	/* copy the smaller first value from the two array's which are already sorted to the final array */
 	while (a_len && b_len) {
 		if (*a > *b) {
 			c[t++] = *(b++);
@@ -78,3 +58,23 @@ void quick_sort(int* arr, int len) {
 /* un-implemented */
 void counting_sort(int* arr, int len) {}
 void radix_sort(int* arr, int len) {}
+
+/* slow sorts O(n^2) */
+void bubble_sort(int* arr, int len) {
+	bool swapped = true;
+	while (swapped) {
+		swapped = false;
+		for (int i = 0; i < len - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				int t = arr[i + 1];
+				arr[i + 1] = arr[i];
+				arr[i] = t;
+				swapped = true;
+			}
+		}
+	}
+}
+
+void selection_sort(int* arr, int len) {}
+
+void insertion_sort(int* arr, int len) {}
