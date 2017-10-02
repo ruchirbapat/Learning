@@ -42,6 +42,8 @@ void merge_sort(int* arr, int len) {
 	/* merge the sorted lower and upper halves */
 	/* a is the lower half, b is the upper half, c is the temp array which will contain the merged result */
 	int *a = arr, *b = arr + half, *c = calloc(len, sizeof(int)), t = 0;
+	
+	/* smaller array's lengths*/
 	int a_len = half;
 	int b_len = len - half;
 	
@@ -75,5 +77,4 @@ void quick_sort(int* arr, int len) {
 
 /* un-implemented */
 void counting_sort(int* arr, int len) {}
-
 void radix_sort(int* arr, int len) {}

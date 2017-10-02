@@ -14,6 +14,5 @@ void quick_sort(int* arr, int len);
 /* un-implemented */
 void counting_sort(int* arr, int len);
 void radix_sort(int* arr, int len);
-void insertion_sort(int* arr, int len);
 
 #endif // !_SORT_H
